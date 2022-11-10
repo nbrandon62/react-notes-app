@@ -1,13 +1,56 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.container{
+    max-width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.notes-list{
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* automaticall resize the columns based on column size, a column cannot be smaller than 250px and no bigger than 1 fractional unit */
+    
+}
+
+.note{
+    background-color: #fff89b;
+    border-radius: 10px;
+    padding: 1rem;
+    min-height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.note-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+textarea{
+    border: none;
+    resize: none;
+    background-color: rgb(118, 230, 187);
+}
+
+textarea:focus{
+    outline: none;
+}
+
+.save{
+    background-color: rgb(165, 165, 165);
+    border: none;
+    border-radius: 15px;
+    padding: 5px 10px 5px 10px;
+}
+
+.save:hover{
+    background-color: rgb(212, 212, 212) ;
+    cursor: pointer;
+}
+
+.note.new{
+    background-color: rgb(118, 230, 187);
 }
