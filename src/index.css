@@ -6,11 +6,44 @@
     padding-left: 15px;
 }
 
+.header{ 
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    justify-content: space-between;
+}
+
+.search{
+    display: flex; 
+    align-items: center;
+    background-color: rgb(207, 207, 207);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 1.5em;
+}
+
+.search input{
+    border: none;
+    background-color: rgb(207, 207, 207);
+}
+
+.search input:focus{
+    outline: none;
+}
+
 .notes-list{
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* automaticall resize the columns based on column size, a column cannot be smaller than 250px and no bigger than 1 fractional unit */
     
+}
+
+.dark-mode{
+    background-color: black;
+}
+
+.dark-mode h1{
+    color: white;
 }
 
 .note{
