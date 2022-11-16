@@ -4,7 +4,13 @@ import { MdDeleteForever } from "react-icons/md";
 const Note = ({ id, text, date, handleDeleteNotes, handleEditNotes }) => {
 
   return (
-    <div className="note" key={id} onClick={() => handleEditNotes(text)}>
+    <div
+    className="note"
+    key={id}
+    onClick={() => {
+      handleEditNotes(text)
+      handleDeleteNotes(id)
+      }}>
       <span>{text}</span>
 
       <div className="note-footer">
