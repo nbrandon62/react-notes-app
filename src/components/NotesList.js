@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import AddNotes from "./AddNotes";
 import Note from "./Note";
 
 const NotesList = ({ notes, handleAddNote, handleDeleteNotes }) => {
+  const [editText, setEditText] = useState("");
+
+  const editNotes = (text) => {
+    setEditText(text)
+  };
+
   return (
     <div className="notes-list">
-      <AddNotes handleAddNote={handleAddNote} />
+      <AddNotes editText={editText} handleAddNote={handleAddNote} />
 
       {notes.map((note) => (
         <Note
+          handleEditNotes={editNotes}
           handleDeleteNotes={handleDeleteNotes}
           id={note.id}
           text={note.text}

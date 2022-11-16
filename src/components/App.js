@@ -17,7 +17,7 @@ const App = () => {
       setNotes(savedNotes);
     }
   }, []);
-  
+
   //this useEffect hook says that whenever the notes state changes, trigger this function that saves the data onto local storage.
   useEffect(() => {
     localStorage.setItem("react-note-app-data", JSON.stringify(notes));
@@ -33,6 +33,7 @@ const App = () => {
     };
     const newNotes = [newNote, ...notes];
     setNotes(newNotes);
+    console.log(newNotes)
   };
 
   const deleteNote = (id) => {
@@ -48,6 +49,7 @@ const App = () => {
         <Header handleTheme={setTheme} />
         <SearchBar handleSearch={setSearchText} />
         <NotesList
+          // this function says return an array in lowercase with a text property of note that matches searchText 
           notes={notes.filter((note) =>
             note.text.toLowerCase().includes(searchText)
           )}

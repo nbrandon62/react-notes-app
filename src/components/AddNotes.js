@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-const AddNotes = ({ handleAddNote }) => {
-  const [noteText, setNoteText] = useState("");
+const AddNotes = ({ handleAddNote, editText }) => {
+  const [noteText, setNoteText] = useState('');
   const characterLimit = 200;
+
+  useEffect(() => {
+      setNoteText(editText)
+  }, [editText])
 
   const handleSaveClick = () => {
     //.trim() removes the white spaces from both ends of a string and returns a new string without whitespace
@@ -19,6 +23,7 @@ const AddNotes = ({ handleAddNote }) => {
       setNoteText(e.target.value);
     }
   };
+
 
   return (
     <div className="note new">
