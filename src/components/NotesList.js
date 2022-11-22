@@ -6,7 +6,7 @@ const NotesList = ({ notes, handleAddNote, handleDeleteNotes }) => {
   const [editText, setEditText] = useState("");
 
   const editNotes = (text) => {
-    setEditText(text)
+      setEditText(text)
   };
 
   return (
@@ -15,6 +15,7 @@ const NotesList = ({ notes, handleAddNote, handleDeleteNotes }) => {
 
       {notes.map((note) => (
         <Note
+          key={note.id}
           handleEditNotes={editNotes}
           handleDeleteNotes={handleDeleteNotes}
           id={note.id}

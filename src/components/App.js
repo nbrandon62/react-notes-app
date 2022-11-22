@@ -33,7 +33,6 @@ const App = () => {
     };
     const newNotes = [newNote, ...notes];
     setNotes(newNotes);
-    console.log(newNotes)
   };
 
   const deleteNote = (id) => {
